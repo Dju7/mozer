@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { usePathname } from "next/navigation";
+import { FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const slide = {
     initial: {
@@ -44,18 +45,19 @@ export default function Nav() {
 
 
   return (
+    <>
     <motion.nav 
     variants={slide}
     initial='initial'
     animate='enter'
     exit='exit'
-    className="fixed z-10 right-0 top-0 bg-gray-700  h-[100vh] w-[400px] flex justify-center items-center text-white"
+    className="fixed z-10 right-0 top-0 bg-gray-700  h-screen w-[400px] flex flex-col justify-center items-center text-white"
     >
         <motion.div
         initial={{ scale: 0, opacity: 0}}
         animate={{scale: 1.3, opacity: 100}}
         transition={{delay: 0.4, duration: 0.5}}
-        className=" h-[60%] w-[50%] flex flex-col justify-center items-center gap-6"
+        className=" h-[65%] w-[60%] flex flex-col justify-center items-center gap-6 text-2xl"
         >
         {
             navItems.map( (item, index) => (
@@ -63,7 +65,15 @@ export default function Nav() {
             ))
         }
         </motion.div>
+
+        <div className='absolute bottom-5 text-2xl h-20 w-[70%] flex justify-center items-center gap-6'>
+         <FaInstagram className='cursor-pointer hover:text-sky-400' />
+         <FaTwitter className='cursor-pointer hover:text-sky-400' />
+         <FaLinkedin className='cursor-pointer hover:text-sky-400'/>
+
+        </div>
       
     </motion.nav>
+    </>
   )
 }

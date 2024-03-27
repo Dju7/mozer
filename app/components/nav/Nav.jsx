@@ -51,7 +51,7 @@ export default function Nav() {
     initial='initial'
     animate='enter'
     exit='exit'
-    className="fixed z-10 right-0 top-0 bg-gray-700  h-screen w-[400px] flex flex-col justify-center items-center text-white"
+    className="fixed z-30 right-0 top-0 bg-gray-700  h-screen w-[400px] flex flex-col justify-center items-center text-white"
     >
         <motion.div
         initial={{ scale: 0, opacity: 0}}

@@ -1,5 +1,9 @@
 import Header from "./components/header/Header";
 import Providers from './providers/providers'
+import Template from './/template'
+import {motion} from 'framer-motion'
+
+
 import "./globals.css";
 
 export const metadata = {
@@ -12,11 +16,15 @@ export default function RootLayout({ children }) {
     <html lang="fr">
   
       <body >
+        
+        <Header /> 
+        <Template>
         <Providers>
-        <Header />
         {children}
         </Providers>
-        </body>
+        </Template> 
+         
+      </body>
        
     </html>
   );

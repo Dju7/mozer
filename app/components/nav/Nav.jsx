@@ -39,7 +39,7 @@ const navItems = [
 ]
 
 
-export default function Nav() {
+export default function Nav({onClose}) {
     const pathname = usePathname();
 
 
@@ -61,7 +61,7 @@ export default function Nav() {
         >
         {
             navItems.map( (item, index) => (
-                <Link href={item.href} key={index} className={pathname === `${item.href}` ? "active" : ""}>{item.title}</Link>
+                <Link href={item.href} key={index} className={pathname === `${item.href}` ? "active" : ""} onClick={onClose}>{item.title}</Link>
             ))
         }
         </motion.div>
